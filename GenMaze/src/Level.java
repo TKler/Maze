@@ -79,12 +79,14 @@ public class Level
 
 	private void initializeCharMap()
 	{
+		// create and fill charMap with ' '
 		_charMap = new char[_height][_width];
 		for(int i = 0; i < _charMap.length; i++)
 		{
 			Arrays.fill(_charMap[i], ' ');
 		}
 		
+		// add # at the appropriat places
 		for(int curHeight = 0; curHeight < _height; curHeight++)
         {
         	for(int curWidth = 0; curWidth < _width; curWidth++)
@@ -94,6 +96,7 @@ public class Level
         	}
         }
 		
+		//add S and E
 		_charMap[_startHeight][_startWidth] = 'S';
 		_charMap[_goalHeight][_goalWidth] = 'E';
 	}

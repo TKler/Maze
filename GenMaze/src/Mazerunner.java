@@ -96,7 +96,7 @@ public class Mazerunner
 			markPosition(xPosition, yPosition);
 			return true;
 		}
-		
+		//if neither direction worked, none will ;)
 		return false;
 	}
 

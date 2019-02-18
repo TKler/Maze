@@ -2,14 +2,18 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-
 /*
  * Run as per usual. File pathes are relativ to the project path so in this case Samples/SOMETITLE.txt, 
  * though I guess you can add your own folders to alter said structure.
+ * 
+ * All but one Testcase run through. 
+ * The miss lies withing the nature of sparse lists and recursion.
+ * Still it is an error non the less. 
  */
 public class Main
 {
 
+	// feel free to run pseudoTest instead of the other lines
 	public static void main(String[] args)
 	{
 //		runPseudoTest();
@@ -19,13 +23,14 @@ public class Main
 		{
 			String path = askForPathToLevel();
 			level = new Level(Paths.get(path));
-		} catch (IOException | java.util.NoSuchElementException e)
+		} 
+		catch (IOException | java.util.NoSuchElementException e)
 		{
 			System.out.println("This path was invalid. Please start again");
 			System.exit(0); 
-			// would be nicer with reask and such, but I guess
-			//this is not the focus here and I find quite okay for a one function programm
-		
+			// would be nicer with a re ask and such, but I guess
+			//this is not the focus here and I find quite okay for a 
+			//one function program
 		}
 
 	    Mazerunner runner = new Mazerunner(level);
